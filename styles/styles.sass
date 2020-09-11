@@ -1,0 +1,232 @@
+$background: #bebf99
+$sky: #0a0c24
+$ufoMain: #4d4d4d
+$ufoRay: #00d9ff
+$ufoWindow: rgba(0, 0, 0, 0.16)
+$cactus: #237543
+
+@keyframes hover
+  0%
+    transform: translate(0, 0)
+  50%
+    transform: translateY(50px)
+  100%
+    transform: translateX(0, 0)
+
+@keyframes glow
+  0%
+    filter: blur(3px)
+    background-color: $ufoRay
+  50%
+    filter: blur(7px)
+    background-color: #f60000
+  100%
+    filter: blur(3px)
+    background-color: $ufoRay
+
+*
+  box-sizing: border-box
+
+body
+  margin: 0
+
+  #bgTop
+    height: 75vh
+    width: 100vw
+    background-color: $sky
+    display: flex
+    justify-content: flex-end
+
+    #moon
+      width: 80px
+      height: 80px
+      border-radius: 50%
+      box-shadow: 15px 15px 0 0 #fefefe
+      filter: blur(3px)
+      margin-right: 5rem
+
+  #bgBottom
+    background-color: $background
+    height: 25vh
+
+    #pyramids
+      position: relative
+      bottom: 5rem
+      display: flex
+      justify-content: center
+      margin-right: 3rem
+
+      #men
+        &::before, &::after
+          content: ''
+          border: 25px solid
+          position: absolute
+
+        &::before
+         border-color: transparent transparent #C2985E transparent
+         transform: scaleY(2) skewY(-40deg) rotate(45deg)
+
+        &::after
+          border-color: transparent transparent #7A4F25 transparent
+          transform: scaleY(2) skewY(40deg) rotate(-45deg)
+
+      #kha
+        margin-left: 10rem
+        position: relative
+        bottom: 4rem
+
+        &::before, &::after
+          content: ''
+          border: 50px solid
+          position: absolute
+
+        &::before
+         border-color: transparent transparent #C2985E transparent
+         transform: scaleY(2) skewY(-40deg) rotate(45deg)
+
+        &::after
+          border-color: transparent transparent #7A4F25 transparent
+          transform: scaleY(2) skewY(40deg) rotate(-45deg)
+
+      #khu
+        margin-left: 13rem
+        position: relative
+
+        &::before, &::after
+          content: ''
+          border: 25px solid
+          position: absolute
+
+        &::before
+         border-color: transparent transparent #C2985E transparent
+         transform: scaleY(2) skewY(-40deg) rotate(45deg)
+
+        &::after
+          border-color: transparent transparent #7A4F25 transparent
+          transform: scaleY(2) skewY(40deg) rotate(-45deg)
+
+    #cactus-container
+      display: flex
+      flex-direction: row
+      position: absolute
+      bottom: 12rem
+      left: 5rem
+
+      .cactus
+        background-color: $cactus
+        height: 4rem
+        width: .5rem
+        border-radius: 5px 5px 0 0
+        margin-left: 4rem
+
+        .left
+          background-color: $cactus
+          height: .5rem
+          width: 1.5rem
+          position: relative
+          top: 1rem
+          border-radius: 0 0 3px 0
+
+          &::after
+            content: ''
+            display: block
+            width: .5rem
+            height: .5rem
+            background-color: $cactus
+            position: relative
+            left: 1rem
+            bottom: .5rem
+            border-radius: 5px 5px 0 0
+
+        .right
+          background-color: $cactus
+          height: .5rem
+          width: 1.5rem
+          position: relative
+          top: 1.5rem
+          right: 1rem
+          border-radius: 0 0 3px 0
+
+          &::after
+            content: ''
+            display: block
+            width: .5rem
+            height: .5rem
+            background-color: $cactus
+            position: relative
+            bottom: .5rem
+            border-radius: 5px 5px 0 0
+
+  #ufoContainer
+    display: flex
+    align-items: center
+    justify-content: center
+
+    #ufo
+      display: flex
+      align-items: center
+      flex-direction: column
+      position: absolute
+      top: -6rem
+      animation: hover ease-in-out infinite 5s
+
+
+      #window
+        height: 10rem
+        width: 25rem
+        border-radius: 50%
+        background-color: $ufoWindow
+        position: relative
+        z-index: 1
+        top: 8rem
+        display: flex
+        justify-content: space-around
+
+        .alien
+          height: 1.5rem
+          width: 1rem
+          border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%
+          background-color: rgb(79, 170, 75)
+          margin-top: .5rem
+
+          .eyes
+            height: .5rem
+            width: .25rem
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%
+            background-color: #121212
+            position: relative
+            top: .5rem
+            left: .1rem
+            transform: rotate(-20deg)
+
+            &::after
+              content: ''
+              display: block
+              height: .5rem
+              width: .25rem
+              border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%
+              background-color: #121212
+              transform: rotate(40deg)
+              position: relative
+              left: .5rem
+              top: .1rem
+
+        .co-pilot
+          margin-top: 1.5rem
+
+      #ufoBody
+        height: 16rem
+        width: 40rem
+        border-radius: 50%
+        background-color: $ufoMain
+        position: relative
+        z-index: 2
+
+      #rayTop
+        height: 12rem
+        width: 30rem
+        border-radius: 50%
+        position: relative
+        bottom: 12.5rem
+        z-index: 3
+        animation: glow infinite 3s

@@ -1,0 +1,233 @@
+@keyframes hover {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateX(0, 0);
+  }
+}
+@keyframes glow {
+  0% {
+    filter: blur(3px);
+    background-color: #00d9ff;
+  }
+  50% {
+    filter: blur(7px);
+    background-color: #f60000;
+  }
+  100% {
+    filter: blur(3px);
+    background-color: #00d9ff;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+body #bgTop {
+  height: 75vh;
+  width: 100vw;
+  background-color: #0a0c24;
+  display: flex;
+  justify-content: flex-end;
+}
+body #bgTop #moon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 0 #fefefe;
+  filter: blur(3px);
+  margin-right: 5rem;
+}
+body #bgBottom {
+  background-color: #bebf99;
+  height: 25vh;
+}
+body #bgBottom #pyramids {
+  position: relative;
+  bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  margin-right: 3rem;
+}
+body #bgBottom #pyramids #men::before, body #bgBottom #pyramids #men::after {
+  content: "";
+  border: 25px solid;
+  position: absolute;
+}
+body #bgBottom #pyramids #men::before {
+  border-color: transparent transparent #C2985E transparent;
+  transform: scaleY(2) skewY(-40deg) rotate(45deg);
+}
+body #bgBottom #pyramids #men::after {
+  border-color: transparent transparent #7A4F25 transparent;
+  transform: scaleY(2) skewY(40deg) rotate(-45deg);
+}
+body #bgBottom #pyramids #kha {
+  margin-left: 10rem;
+  position: relative;
+  bottom: 4rem;
+}
+body #bgBottom #pyramids #kha::before, body #bgBottom #pyramids #kha::after {
+  content: "";
+  border: 50px solid;
+  position: absolute;
+}
+body #bgBottom #pyramids #kha::before {
+  border-color: transparent transparent #C2985E transparent;
+  transform: scaleY(2) skewY(-40deg) rotate(45deg);
+}
+body #bgBottom #pyramids #kha::after {
+  border-color: transparent transparent #7A4F25 transparent;
+  transform: scaleY(2) skewY(40deg) rotate(-45deg);
+}
+body #bgBottom #pyramids #khu {
+  margin-left: 13rem;
+  position: relative;
+}
+body #bgBottom #pyramids #khu::before, body #bgBottom #pyramids #khu::after {
+  content: "";
+  border: 25px solid;
+  position: absolute;
+}
+body #bgBottom #pyramids #khu::before {
+  border-color: transparent transparent #C2985E transparent;
+  transform: scaleY(2) skewY(-40deg) rotate(45deg);
+}
+body #bgBottom #pyramids #khu::after {
+  border-color: transparent transparent #7A4F25 transparent;
+  transform: scaleY(2) skewY(40deg) rotate(-45deg);
+}
+body #bgBottom #cactus-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 12rem;
+  left: 5rem;
+}
+body #bgBottom #cactus-container .cactus {
+  background-color: #237543;
+  height: 4rem;
+  width: 0.5rem;
+  border-radius: 5px 5px 0 0;
+  margin-left: 4rem;
+}
+body #bgBottom #cactus-container .cactus .left {
+  background-color: #237543;
+  height: 0.5rem;
+  width: 1.5rem;
+  position: relative;
+  top: 1rem;
+  border-radius: 0 0 3px 0;
+}
+body #bgBottom #cactus-container .cactus .left::after {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #237543;
+  position: relative;
+  left: 1rem;
+  bottom: 0.5rem;
+  border-radius: 5px 5px 0 0;
+}
+body #bgBottom #cactus-container .cactus .right {
+  background-color: #237543;
+  height: 0.5rem;
+  width: 1.5rem;
+  position: relative;
+  top: 1.5rem;
+  right: 1rem;
+  border-radius: 0 0 3px 0;
+}
+body #bgBottom #cactus-container .cactus .right::after {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #237543;
+  position: relative;
+  bottom: 0.5rem;
+  border-radius: 5px 5px 0 0;
+}
+body #ufoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #ufoContainer #ufo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: -6rem;
+  animation: hover ease-in-out infinite 5s;
+}
+body #ufoContainer #ufo #window {
+  height: 10rem;
+  width: 25rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.16);
+  position: relative;
+  z-index: 1;
+  top: 8rem;
+  display: flex;
+  justify-content: space-around;
+}
+body #ufoContainer #ufo #window .alien {
+  height: 1.5rem;
+  width: 1rem;
+  border-radius: 50% 50% 50% 50%/30% 30% 70% 70%;
+  background-color: #4faa4b;
+  margin-top: 0.5rem;
+}
+body #ufoContainer #ufo #window .alien .eyes {
+  height: 0.5rem;
+  width: 0.25rem;
+  border-radius: 50% 50% 50% 50%/30% 30% 70% 70%;
+  background-color: #121212;
+  position: relative;
+  top: 0.5rem;
+  left: 0.1rem;
+  transform: rotate(-20deg);
+}
+body #ufoContainer #ufo #window .alien .eyes::after {
+  content: "";
+  display: block;
+  height: 0.5rem;
+  width: 0.25rem;
+  border-radius: 50% 50% 50% 50%/30% 30% 70% 70%;
+  background-color: #121212;
+  transform: rotate(40deg);
+  position: relative;
+  left: 0.5rem;
+  top: 0.1rem;
+}
+body #ufoContainer #ufo #window .co-pilot {
+  margin-top: 1.5rem;
+}
+body #ufoContainer #ufo #ufoBody {
+  height: 16rem;
+  width: 40rem;
+  border-radius: 50%;
+  background-color: #4d4d4d;
+  position: relative;
+  z-index: 2;
+}
+body #ufoContainer #ufo #rayTop {
+  height: 12rem;
+  width: 30rem;
+  border-radius: 50%;
+  position: relative;
+  bottom: 12.5rem;
+  z-index: 3;
+  animation: glow infinite 3s;
+}
+
+/*# sourceMappingURL=styles.css.map */
